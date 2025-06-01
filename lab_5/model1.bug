@@ -1,0 +1,9 @@
+
+model {
+  for (i in 1:n) {
+    x[i] ~ dpar(alpha, xmin)
+  }
+
+  alpha ~ dunif(1.01, 10)
+}
+
