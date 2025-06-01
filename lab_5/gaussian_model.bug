@@ -1,0 +1,12 @@
+
+model {
+    for (i in 1:length(X)) {
+        X[i] ~ dnorm(mu, tau)
+    }
+    mu ~ dunif(-10, 30)
+    tau <- 1 / (sigma * sigma) 
+    sigma ~ dnorm(0, 50) T(0,)
+    
+    m_over_s <- mu / sigma
+}
+
